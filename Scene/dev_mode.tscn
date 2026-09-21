@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dxedbd664sl6q"]
+
+[ext_resource type="Texture2D" uid="uid://cefj05h061ioc" path="res://settings menu.png" id="1_poljb"]
+[ext_resource type="Script" uid="uid://x4wl5cmwyncn" path="res://Scene/dev_mode.gd" id="1_rmxes"]
+
+[node name="DevMode" type="Control" unique_id=1970260949]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rmxes")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=824581569]
+layout_mode = 0
+offset_right = 1140.0
+offset_bottom = 639.0
+texture = ExtResource("1_poljb")
+
+[node name="Teleport1" type="Button" parent="." unique_id=1158303882]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 303.0
+offset_right = 452.0
+offset_bottom = 361.0
+text = "Teleport
+"
+
+[node name="Teleport2" type="Button" parent="." unique_id=748136843]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 298.0
+offset_right = 819.0
+offset_bottom = 359.0
+text = "Teleport
+"
+
+[node name="MinigameText2" type="RichTextLabel" parent="." unique_id=855375735]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 258.0
+offset_right = 420.0
+offset_bottom = 291.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Minigame 1
+"
+
+[node name="MinigameText3" type="RichTextLabel" parent="." unique_id=955820396]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 250.0
+offset_right = 805.0
+offset_bottom = 283.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Minigame 2
+"
+
+[node name="MinigameText4" type="RichTextLabel" parent="." unique_id=1025457083]
+layout_mode = 0
+offset_left = 473.0
+offset_top = 102.0
+offset_right = 644.0
+offset_bottom = 135.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Developer Mode
+"
+
+[node name="Button" type="Button" parent="." unique_id=481415583]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 483.0
+offset_right = 257.0
+offset_bottom = 540.0
+text = "<-- Back"
+
+[connection signal="pressed" from="Teleport1" to="." method="_on_teleport_1_pressed"]
+[connection signal="pressed" from="Teleport2" to="." method="_on_teleport_2_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://ce2ve5psim31a"]
+
+[ext_resource type="Script" uid="uid://c2l6xk5xqu7x4" path="res://Scene/minigame_1.gd" id="1_d7yb5"]
+[ext_resource type="PackedScene" uid="uid://c1ydwd3qy60v" path="res://Scene/player.tscn" id="2_omgj1"]
+[ext_resource type="Texture2D" uid="uid://carvdbb3v7vrd" path="res://minigame1bg.png" id="2_poyv6"]
+[ext_resource type="Script" uid="uid://mpmeymg7fu42" path="res://Scene/poao.gd" id="3_keeiu"]
+[ext_resource type="Texture2D" uid="uid://3qtu8lip466h" path="res://poao.png" id="3_omgj1"]
+[ext_resource type="Script" uid="uid://kioxxim06jpb" path="res://Scene/poao_2.gd" id="5_d7yb5"]
+[ext_resource type="Script" uid="uid://dh15ne828nru2" path="res://Scene/poao_3.gd" id="6_cgti3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxtda"]
+size = Vector2(1154, 134.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxtda"]
+radius = 20.0
+height = 86.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm775"]
+size = Vector2(332, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jy61l"]
+size = Vector2(367, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bl5f"]
+size = Vector2(273, 39)
+
+[sub_resource type="Animation" id="Animation_omgj1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("poao/potatomug:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_c70rt"]
+resource_name = "flotationdevice"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("poao/potatomug:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.06666672, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_unan3"]
+_data = {
+&"RESET": SubResource("Animation_omgj1"),
+&"flotationdevice": SubResource("Animation_c70rt")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gxtda"]
+radius = 27.45906
+
+[node name="minigame_1" type="Node2D" unique_id=1915862815]
+script = ExtResource("1_d7yb5")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=603376663]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="bg" type="TextureRect" parent="Parallax2D" unique_id=1771197401]
+offset_top = 2.0
+offset_right = 1153.0
+offset_bottom = 642.0
+texture = ExtResource("2_poyv6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=358462803]
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=348024933]
+offset_top = 512.0
+offset_right = 1150.0
+offset_bottom = 647.0
+color = Color(0.05324617, 0.3670712, 0.3966039, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=65659977]
+position = Vector2(575, 579)
+shape = SubResource("RectangleShape2D_gxtda")
+
+[node name="player" parent="." unique_id=1259760703 instance=ExtResource("2_omgj1")]
+position = Vector2(158, 455)
+
+[node name="Area2D" type="Area2D" parent="player" unique_id=1880991604]
+collision_layer = 65
+collision_mask = 65
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Area2D" unique_id=73528133]
+shape = SubResource("CapsuleShape2D_gxtda")
+
+[node name="platform3" type="StaticBody2D" parent="." unique_id=1555536273]
+
+[node name="ColorRect" type="ColorRect" parent="platform3" unique_id=910276571]
+offset_left = 226.0
+offset_top = 313.0
+offset_right = 596.0
+offset_bottom = 353.0
+color = Color(0.3137255, 1, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform3" unique_id=188065586]
+position = Vector2(752, 398)
+shape = SubResource("RectangleShape2D_hm775")
+
+[node name="platform2" type="StaticBody2D" parent="." unique_id=2142252981]
+
+[node name="ColorRect" type="ColorRect" parent="platform2" unique_id=485391276]
+offset_left = -15.0
+offset_top = 254.0
+offset_right = 259.0
+offset_bottom = 294.0
+color = Color(0, 0.74883777, 0.74991435, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform2" unique_id=1115567240]
+position = Vector2(413, 333)
+shape = SubResource("RectangleShape2D_jy61l")
+
+[node name="platform1" type="StaticBody2D" parent="." unique_id=538437201]
+
+[node name="ColorRect" type="ColorRect" parent="platform1" unique_id=1485801349]
+offset_left = 586.0
+offset_top = 377.0
+offset_right = 919.0
+offset_bottom = 422.0
+color = Color(4.813075e-06, 0.84291214, 0.843013, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform1" unique_id=760402770]
+position = Vector2(123, 273)
+shape = SubResource("RectangleShape2D_5bl5f")
+
+[node name="poao" type="Node2D" parent="." unique_id=1786745692]
+position = Vector2(0, 2)
+script = ExtResource("3_keeiu")
+
+[node name="potatomug" type="TextureRect" parent="poao" unique_id=1974914829]
+offset_left = 966.0
+offset_top = 441.0
+offset_right = 1030.0
+offset_bottom = 499.0
+texture = ExtResource("3_omgj1")
+
+[node name="movingpoao" type="AnimationPlayer" parent="poao" unique_id=411739905]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_unan3")
+
+[node name="Area2D" type="Area2D" parent="poao" unique_id=1410086229]
+position = Vector2(966, 441)
+collision_layer = 65
+collision_mask = 65
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="poao/Area2D" unique_id=2025309879]
+position = Vector2(29, 28)
+shape = SubResource("CircleShape2D_gxtda")
+
+[node name="poao2" type="Node2D" parent="." unique_id=398582416]
+position = Vector2(0, 2)
+script = ExtResource("5_d7yb5")
+
+[node name="potatomug" type="TextureRect" parent="poao2" unique_id=665519081]
+offset_left = 38.0
+offset_top = 182.0
+offset_right = 102.0
+offset_bottom = 240.0
+texture = ExtResource("3_omgj1")
+
+[node name="movingpoao" type="AnimationPlayer" parent="poao2" unique_id=732486870]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_unan3")
+
+[node name="Area2D" type="Area2D" parent="poao2" unique_id=515244005]
+position = Vector2(42, 184)
+collision_layer = 65
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="poao2/Area2D" unique_id=249646936]
+position = Vector2(29, 28)
+shape = SubResource("CircleShape2D_gxtda")
+
+[node name="poao3" type="Node2D" parent="." unique_id=862052778]
+position = Vector2(0, 2)
+script = ExtResource("6_cgti3")
+
+[node name="potatomug" type="TextureRect" parent="poao3" unique_id=372086351]
+offset_left = 381.0
+offset_top = 240.0
+offset_right = 445.0
+offset_bottom = 298.0
+texture = ExtResource("3_omgj1")
+
+[node name="movingpoao" type="AnimationPlayer" parent="poao3" unique_id=1697298805]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_unan3")
+
+[node name="Area2D" type="Area2D" parent="poao3" unique_id=1650178554]
+position = Vector2(42, 184)
+collision_layer = 65
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="poao3/Area2D" unique_id=1183453432]
+position = Vector2(367, 88)
+shape = SubResource("CircleShape2D_gxtda")
+
+[editable path="player"]

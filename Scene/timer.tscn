@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://q2r471m5vhrf"]
+
+[ext_resource type="Script" uid="uid://dt15uo5tt21cx" path="res://node_2d.gd" id="1_ginet"]
+
+[node name="Timer Scene" type="Node2D" unique_id=1982976413]
+script = ExtResource("1_ginet")
+
+[node name="timer" type="RichTextLabel" parent="." unique_id=1445279420]
+offset_left = 271.0
+offset_top = 12.0
+offset_right = 816.0
+offset_bottom = 202.0
+theme_override_font_sizes/normal_font_size = 46

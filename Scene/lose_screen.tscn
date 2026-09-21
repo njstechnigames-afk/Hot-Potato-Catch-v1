@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cnwm2i7tvtw5b"]
+
+[ext_resource type="Script" uid="uid://2xfbvx6533co" path="res://Scene/lose_screen.gd" id="1_ddvua"]
+[ext_resource type="Texture2D" uid="uid://d3k67sj5mkd2s" path="res://loss.png" id="1_ubqiu"]
+
+[node name="lose_screen" type="Node2D" unique_id=1516543556]
+script = ExtResource("1_ddvua")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1396792648]
+offset_right = 1155.0
+offset_bottom = 648.0
+texture = ExtResource("1_ubqiu")
+
+[node name="Button" type="Button" parent="." unique_id=1280485563]
+offset_left = 793.0
+offset_top = 511.0
+offset_right = 1035.0
+offset_bottom = 580.0
+theme_override_font_sizes/font_size = 25
+text = "Restart?"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

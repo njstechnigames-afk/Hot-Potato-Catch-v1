@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://b4xy6538trp86"]
+
+[ext_resource type="Script" uid="uid://bfoar84kwkpcq" path="res://Scene/settings.gd" id="1_qampi"]
+[ext_resource type="Texture2D" uid="uid://cefj05h061ioc" path="res://settings menu.png" id="1_rukqk"]
+
+[node name="settings" type="Control" unique_id=487718564]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qampi")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1085070355]
+modulate = Color(0, 0, 0, 1)
+top_level = true
+layout_mode = 0
+offset_left = 103.0
+offset_top = 78.0
+offset_right = 711.0
+offset_bottom = 199.0
+theme_override_font_sizes/normal_font_size = 20
+text = "CONTROLS:
+-Minigame 1= Arrow keys to move left/right, space to jump
+-Minigame 2= click targets"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1796598298]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 650.0
+texture = ExtResource("1_rukqk")
+
+[node name="DevLogin" type="LineEdit" parent="." unique_id=1913558669]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 288.0
+offset_right = 425.0
+offset_bottom = 319.0
+secret = true
+secret_character = "*"
+
+[node name="dev" type="RichTextLabel" parent="." unique_id=889698622]
+modulate = Color(0, 0, 0, 1)
+top_level = true
+layout_mode = 0
+offset_left = 99.0
+offset_top = 248.0
+offset_right = 707.0
+offset_bottom = 369.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "Dev Access:"
+
+[node name="Login" type="Button" parent="." unique_id=846167152]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 348.0
+offset_right = 216.0
+offset_bottom = 385.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Login"
+
+[node name="Button" type="Button" parent="." unique_id=1252181516]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 496.0
+offset_right = 231.0
+offset_bottom = 542.0
+text = "<-- Back"
+
+[connection signal="pressed" from="Login" to="." method="_on_login_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

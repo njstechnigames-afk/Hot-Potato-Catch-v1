@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://fjf87b4i8lre"]
+
+[ext_resource type="Texture2D" uid="uid://cgdk2vdxfl25i" path="res://level1_backround.png" id="1_bttdy"]
+[ext_resource type="Script" uid="uid://brcc5rf25euu6" path="res://level_scene.gd" id="1_vfcv8"]
+[ext_resource type="Texture2D" uid="uid://sxomah3d3q4g" path="res://Lives.png" id="3_kb6yk"]
+
+[node name="Level scene" type="Node2D" unique_id=616820966]
+script = ExtResource("1_vfcv8")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=283497998]
+offset_right = 1166.0
+offset_bottom = 646.0
+texture = ExtResource("1_bttdy")
+
+[node name="Livescontainer" type="HBoxContainer" parent="TextureRect" unique_id=707183073]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 154.0
+offset_right = 987.0
+offset_bottom = 245.0
+
+[node name="Lives" type="TextureRect" parent="TextureRect/Livescontainer" unique_id=1958629356]
+layout_mode = 2
+texture = ExtResource("3_kb6yk")
+
+[node name="Lives2" type="TextureRect" parent="TextureRect/Livescontainer" unique_id=2077336639]
+layout_mode = 2
+texture = ExtResource("3_kb6yk")
+
+[node name="Lives3" type="TextureRect" parent="TextureRect/Livescontainer" unique_id=1757676744]
+layout_mode = 2
+texture = ExtResource("3_kb6yk")
+
+[node name="Lives4" type="TextureRect" parent="TextureRect/Livescontainer" unique_id=2140115085]
+layout_mode = 2
+texture = ExtResource("3_kb6yk")
+
+[node name="Lives5" type="TextureRect" parent="TextureRect/Livescontainer" unique_id=1691958949]
+layout_mode = 2
+texture = ExtResource("3_kb6yk")
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=1562775513]
+offset_left = 531.0
+offset_top = 269.0
+offset_right = 697.0
+offset_bottom = 342.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "Level #
+"
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=543023851]
+offset_left = 568.0
+offset_top = 343.0
+offset_right = 646.0
+offset_bottom = 417.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "0.0
+"

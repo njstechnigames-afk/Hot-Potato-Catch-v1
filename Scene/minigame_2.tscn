@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cs5yu2yutf3o"]
+
+[ext_resource type="Script" uid="uid://bbifoe733ue0" path="res://Scene/minigame_2.gd" id="1_8x6x7"]
+[ext_resource type="Texture2D" uid="uid://carvdbb3v7vrd" path="res://minigame1bg.png" id="1_hc76h"]
+[ext_resource type="Texture2D" uid="uid://bw8a4gnd2mq5y" path="res://poao_numero_2.png" id="2_k70ht"]
+[ext_resource type="Texture2D" uid="uid://da0qr8livjbgd" path="res://sad_poao.png" id="3_ihuf6"]
+[ext_resource type="Texture2D" uid="uid://l0kkduiedglx" path="res://hovered_poao.png" id="4_8x6x7"]
+[ext_resource type="Script" uid="uid://cxye1kdajbifk" path="res://Scene/bootan_1.gd" id="5_ihuf6"]
+[ext_resource type="PackedScene" uid="uid://q2r471m5vhrf" path="res://Scene/timer.tscn" id="6_8x6x7"]
+
+[node name="minigame_2" type="Node2D" unique_id=264535166]
+script = ExtResource("1_8x6x7")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=535342973]
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 1154.0
+offset_bottom = 644.0
+texture = ExtResource("1_hc76h")
+
+[node name="timer" parent="." unique_id=1982976413 instance=ExtResource("6_8x6x7")]
+position = Vector2(538, 116)
+
+[node name="bootan1" type="TextureButton" parent="." unique_id=2001723111]
+offset_left = 184.0
+offset_top = 59.0
+offset_right = 338.0
+offset_bottom = 177.0
+texture_normal = ExtResource("2_k70ht")
+texture_pressed = ExtResource("3_ihuf6")
+texture_hover = ExtResource("4_8x6x7")
+script = ExtResource("5_ihuf6")
+
+[node name="bootan2" type="TextureButton" parent="." unique_id=530831626]
+offset_left = 903.0
+offset_top = 471.0
+offset_right = 1057.0
+offset_bottom = 589.0
+texture_normal = ExtResource("2_k70ht")
+texture_pressed = ExtResource("3_ihuf6")
+texture_hover = ExtResource("4_8x6x7")
+script = ExtResource("5_ihuf6")
+
+[node name="bootan3" type="TextureButton" parent="." unique_id=2068180905]
+offset_left = 229.0
+offset_top = 364.0
+offset_right = 383.0
+offset_bottom = 482.0
+texture_normal = ExtResource("2_k70ht")
+texture_pressed = ExtResource("3_ihuf6")
+texture_hover = ExtResource("4_8x6x7")
+script = ExtResource("5_ihuf6")
+
+[node name="bootan4" type="TextureButton" parent="." unique_id=1988190178]
+offset_left = 616.0
+offset_top = 290.0
+offset_right = 770.0
+offset_bottom = 408.0
+texture_normal = ExtResource("2_k70ht")
+texture_pressed = ExtResource("3_ihuf6")
+texture_hover = ExtResource("4_8x6x7")
+script = ExtResource("5_ihuf6")
+
+[connection signal="pressed" from="bootan1" to="bootan1" method="_on_pressed"]
+[connection signal="pressed" from="bootan2" to="bootan2" method="_on_pressed"]
+[connection signal="pressed" from="bootan3" to="bootan3" method="_on_pressed"]
+[connection signal="pressed" from="bootan4" to="bootan4" method="_on_pressed"]

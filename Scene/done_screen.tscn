@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bldkpbi3hgkox"]
+
+[ext_resource type="Texture2D" uid="uid://bb72swd2c0xko" path="res://win.png" id="1_pbivl"]
+[ext_resource type="Script" uid="uid://dguptpflg4tqd" path="res://Scene/done_screen.gd" id="1_wju8n"]
+
+[node name="done_screen" type="Node2D" unique_id=305678203]
+script = ExtResource("1_wju8n")
+
+[node name="win" type="TextureRect" parent="." unique_id=2045325609]
+offset_right = 1167.0
+offset_bottom = 628.0
+texture = ExtResource("1_pbivl")
+
+[node name="Button" type="Button" parent="." unique_id=261006146]
+offset_left = 494.0
+offset_top = 495.0
+offset_right = 683.0
+offset_bottom = 558.0
+text = "Back to Title screen"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
